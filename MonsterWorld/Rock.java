@@ -20,5 +20,5 @@ public class Rock extends Actor
 	}
 
 	//String containing path to Rock.gif
-	private static final String IMG_LOC = "src/rock.gif";
+	private static final String IMG_LOC = "src/images/rock.gif";
 }
