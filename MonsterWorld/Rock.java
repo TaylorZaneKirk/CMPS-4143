@@ -12,7 +12,7 @@ public class Rock extends Actor
 	{
 		super(x, y, IMG_LOC);
 	}
-	
+
 	//Creates a Rock at the default location (0,0)
 	public Rock()
 	{
