@@ -26,8 +26,24 @@ class WorldGrid extends JComponent
 		actors = new ActorGrid();
 		
 		initComponents();
-		actors.add(new Rock(0,0));
+		//actors.add(new Rock(0,0));
 
+	}
+	
+	private boolean isEmpty(int x, int y)
+	{
+		Iterator<Actor> iter = actors.iterator();
+		
+		while(iter.hasNext())
+		{
+			Actor a = iter.next();
+			
+			if(a.getX() == x && a.getY() == y)
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 
 	private void removeActor(int x, int y)
@@ -126,8 +142,11 @@ class WorldGrid extends JComponent
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				addActor(new Rock((x / 48), (y / 48)));
-				repaint();
+				if(isEmpty((x / 48), (y / 48)))
+				{
+					addActor(new Rock((x / 48), (y / 48)));
+					repaint();
+				}
 			}
 		});
 
@@ -135,8 +154,11 @@ class WorldGrid extends JComponent
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				addActor(new Human((x / 48), (y / 48)));
-				repaint();
+				if(isEmpty((x / 48), (y / 48)))
+				{
+					addActor(new Human((x / 48), (y / 48)));
+					repaint();
+				}
 			}
 		});
 
@@ -144,8 +166,11 @@ class WorldGrid extends JComponent
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				addActor(new Vampire((x / 48), (y / 48)));
-				repaint();
+				if(isEmpty((x / 48), (y / 48)))
+				{
+					addActor(new Vampire((x / 48), (y / 48)));
+					repaint();
+				}
 			}
 		});
 
@@ -153,8 +178,11 @@ class WorldGrid extends JComponent
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				addActor(new Zombie((x / 48), (y / 48)));
-				repaint();
+				if(isEmpty((x / 48), (y / 48)))
+				{
+					addActor(new Zombie((x / 48), (y / 48)));
+					repaint();
+				}
 			}
 		});
 	}
