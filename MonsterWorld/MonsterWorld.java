@@ -1,18 +1,18 @@
-import javax.swing.*;
+//Authors:
+//	Taylor Kirk
+//	Andrew McKissick
+//
+//Project 3: Monster World
 
 class MonsterWorld
 {
-
-	private final JFrame frame = new JFrame();
-
 	public static void main(String[] args)
 	{
-
-		WorldFrame frame = new WorldFrame(20,20);
-		frame.setTitle("MonsterWorld");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setResizable(false);
-		frame.setVisible(true); 
-
+		//When window opens, click the "Start"
+		// button to create a new thread and
+		// gameLoop. Once gameLoop begins
+		// user can add actors to the Grid
+		WorldFrame newGame = new WorldFrame();
+		newGame.setVisible(true);
 	}
 }
